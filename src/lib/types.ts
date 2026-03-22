@@ -58,3 +58,47 @@ export interface SimulatorVariable {
 }
 
 export type Page = 'dashboard' | 'transactions' | 'insights' | 'simulator'
+
+// ─── What-If Simulator ────────────────────────────────────────────────────────
+export interface FinancialGoal {
+  id: string
+  name: string
+  targetAmount: number
+  currentAmount: number
+  targetDate: string       // ISO date string
+  icon: string
+}
+
+export interface DailyProjection {
+  date: string             // "Apr 1", "Apr 2" …
+  isoDate: string          // full ISO for sorting
+  expectedBalance: number
+  upperBound: number       // p75 confidence
+  lowerBound: number       // p25 confidence
+  worstCase: number        // p10
+  bestCase: number         // p90
+  isNegative: boolean      // lower bound < 0
+}
+
+export interface DelayedGoal {
+  goal: FinancialGoal
+  originalDaysRemaining: number
+  newDaysRemaining: number
+  delayDays: number
+}
+
+export interface OptimalDateRecommendation {
+  date: string
+  isoDate: string
+  overdraftRiskReduction: number  // percentage
+  reason: string
+}
+
+export interface SimulationResult {
+  projections: DailyProjection[]
+  minBalance: number
+  overdraftRisk: number           // probability 0–1 that balance goes negative
+  delayedGoals: DelayedGoal[]
+  optimalDateRecommendation: OptimalDateRecommendation | null
+  impactOnSavingsRate: number     // percentage point change
+}

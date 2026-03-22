@@ -4,7 +4,7 @@ const PAGE_TITLES: Record<Page, string> = {
   dashboard: 'Dashboard',
   transactions: 'Transactions',
   insights: 'Behavioral Insights',
-  simulator: 'Time Machine',
+  simulator: 'Purchase Intelligence',
 }
 
 interface Props {

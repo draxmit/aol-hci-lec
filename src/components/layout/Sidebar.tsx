@@ -16,7 +16,7 @@ const NAV: NavItem[] = [
     icon: <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M8 2v3M12.5 3.5l-2.1 2.1M14 8h-3M12.5 12.5l-2.1-2.1M8 14v-3M3.5 12.5l2.1-2.1M2 8h3M3.5 3.5l2.1 2.1"/></svg>,
   },
   {
-    id: 'simulator', label: 'Simulator',
+    id: 'simulator', label: 'Purchase Intel',
     icon: <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 13l3-5 3 3 4-7"/></svg>,
   },
 ]
